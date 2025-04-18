@@ -24,7 +24,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // LotR
 app.use('/', indexRouter);
-app.use('/characters', charactersRouter);
+app.use('/characters', charactersRouter); 
+app.use('/characters/:id', charactersRouter);
 app.use('/about', abountRouter);
 
 app.use('/htmx', htmxRouter);

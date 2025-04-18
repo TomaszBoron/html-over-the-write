@@ -36,7 +36,14 @@
         </thead>
         <tbody class="bg-white divide-y divide-gray-200">
           {% for character in characters %}
-            <tr>
+            <tr
+                hx-get="/characters/{{character.id}}"
+                hx-swap="innerHTML transition:true"
+                hx-target="#details"
+                hx-select="#details"
+                hx-ext="transition"
+                class="hover:bg-green-100 cursor-pointer"
+            >
               <td class="px-6 py-4 whitespace-nowrap">
                 <div class="text-sm text-gray-900">{{ character.name }}</div>
               </td>
@@ -59,6 +66,78 @@
           {% endfor %}
         </tbody>
       </table>
+    </section>
+
+    <section id="details" class="mt-6">
+    {% if character %}
+      <div class="container mx-auto py-8">
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+            <div class="md:flex">
+                <div class="md:w-1/3 p-6">
+                    <div class="character-image-container">
+                        {# <img src="/images/characters/{{ character.name|lower|replace({' ': '-'}) }}.jpg" alt="{{ character.name }}" class="character-image"> #}
+                        {# Zastąp ścieżkę do obrazka odpowiednią dla Twojego projektu #}
+                    </div>
+                    <h1 class="text-xl font-bold text-gray-800 mt-4">{{ character.name }}</h1>
+                    <p class="text-gray-600">Rasa: <a href="{{ character.race }}" class="text-blue-500 hover:underline">{% set raceParts = character.race|split('/') %}{{ raceParts|last|capitalize }}</a></p>
+                    <p class="text-gray-600">Gatunek: <a href="{{ character.species }}" class="text-blue-500 hover:underline">{% set speciesParts = character.species|split('/') %}{{ speciesParts|last|capitalize }}</a></p>
+                    {% if character.realm %}
+                        <p class="text-gray-600">Królestwo: <a href="{{ character.realm }}" class="text-blue-500 hover:underline">{% set realmParts = character.realm|split('/') %}{{ realmParts|last|capitalize }}</a></p>
+                    {% endif %}
+                </div>
+                <div class="md:w-2/3 p-6 border-l border-gray-200">
+                    <h2 class="text-lg font-semibold text-gray-700 mb-4">Szczegóły</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <p class="text-gray-600"><span class="font-semibold">Wzrost:</span> {{ character.height }}</p>
+                            <p class="text-gray-600"><span class="font-semibold">Kolor włosów:</span> {{ character.hair_color }}</p>
+                            <p class="text-gray-600"><span class="font-semibold">Kolor oczu:</span> {{ character.eye_color }}</p>
+                            <p class="text-gray-600"><span class="font-semibold">Data urodzenia:</span> {{ character.date_of_birth }}</p>
+                            {% if character.date_of_death != "Unknown" %}
+                                <p class="text-gray-600"><span class="font-semibold">Data śmierci:</span> {{ character.date_of_death }}</p>
+                            {% endif %}
+                            <p class="text-gray-600"><span class="font-semibold">Płeć:</span> {{ character.gender }}</p>
+                            {% if character.group %}
+                                <p class="text-gray-600"><span class="font-semibold">Grupa:</span> <a href="{{ character.group }}" class="text-blue-500 hover:underline">{% set groupParts = character.group|split('/') %}{{ groupParts|last|capitalize }}</a></p>
+                            {% endif %}
+                        </div>
+                        <div>
+                            {% if character.weapons|length > 0 %}
+                                <p class="text-gray-600"><span class="font-semibold">Broń:</span>
+                                    {% for weapon in character.weapons %}
+                                        <span class="inline-block bg-gray-200 rounded-full px-2 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{{ weapon }}</span>
+                                    {% endfor %}
+                                </p>
+                            {% endif %}
+                            {% if character.languages|length > 0 %}
+                                <p class="text-gray-600"><span class="font-semibold">Języki:</span>
+                                    {% for languageUrl in character.languages %}
+                                        <a href="{{ languageUrl }}" class="inline-block bg-blue-100 text-blue-700 rounded-full px-2 py-1 text-sm font-semibold mr-2 mb-2 hover:bg-blue-200">{% set languageParts = languageUrl|split('/') %}{{ languageParts|last|capitalize }}</a>
+                                    {% endfor %}
+                                </p>
+                            {% endif %}
+                            {% if character.films|length > 0 %}
+                                <p class="text-gray-600"><span class="font-semibold">Filmy:</span>
+                                    {% for filmUrl in character.films %}
+                                        <a href="{{ filmUrl }}" class="inline-block bg-green-100 text-green-700 rounded-full px-2 py-1 text-sm font-semibold mr-2 mb-2 hover:bg-green-200">{% set filmParts = filmUrl|split('/') %}{{ filmParts|last|capitalize }}</a>
+                                    {% endfor %}
+                                </p>
+                            {% endif %}
+                            {% if character.books|length > 0 %}
+                                <p class="text-gray-600"><span class="font-semibold">Książki:</span>
+                                    {% for bookUrl in character.books %}
+                                        <a href="{{ bookUrl }}" class="inline-block bg-yellow-100 text-yellow-700 rounded-full px-2 py-1 text-sm font-semibold mr-2 mb-2 hover:bg-yellow-200">{% set bookParts = bookUrl|split('/') %}{{ bookParts|last|capitalize }}</a>
+                                    {% endfor %}
+                                </p>
+                            {% endif %}
+                            <p class="text-gray-600"><span class="font-semibold">Więcej:</span> <a href="{{ character.url }}" target="_blank" class="text-indigo-500 hover:underline">Zobacz na LOTR API</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    {% endif %}
     </section>
   </div>
 {% endblock %}
