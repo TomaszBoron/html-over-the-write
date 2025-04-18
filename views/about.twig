@@ -1,0 +1,51 @@
+{% extends 'layout.twig' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+  <div id="content">
+    <section class="text-center mb-10">
+      <h2 class="text-4xl font-semibold mb-4">Trylogia Władcy Pierścieni</h2>
+      <p class="text-lg max-w-2xl mx-auto">Trzy części legendarnej sagi J.R.R. Tolkiena – opowieść o Pierścieniu, przyjaźni, poświęceniu i walce dobra ze złem.</p>
+    </section>
+
+    <section class="space-y-12">
+      <!-- Drużyna Pierścienia -->
+      <div class="flex flex-col md:flex-row items-center bg-white rounded-xl shadow-md p-6">
+        <img src="https://upload.wikimedia.org/wikipedia/en/8/8e/The_Fellowship_of_the_Ring_cover.gif"
+             alt="Drużyna Pierścienia"
+             class="w-full md:w-1/3 rounded-lg mb-6 md:mb-0 md:mr-6">
+        <div>
+          <h3 class="text-2xl font-bold mb-2">1. Drużyna Pierścienia</h3>
+          <p class="mb-2">Frodo Baggins wyrusza z Shire, aby zniszczyć Jedyny Pierścień. Wraz z nim podąża dziewięcioosobowa drużyna złożona z hobbitów, ludzi, elfa, krasnoluda i czarodzieja.</p>
+          <blockquote class="italic text-gray-600">„Wyruszam na tę wyprawę, choć nie wiem, dokąd ona prowadzi.”</blockquote>
+        </div>
+      </div>
+
+      <!-- Dwie Wieże -->
+      <div class="flex flex-col md:flex-row items-center bg-white rounded-xl shadow-md p-6">
+        <img src="https://upload.wikimedia.org/wikipedia/en/a/a1/The_Two_Towers_cover.gif"
+             alt="Dwie Wieże"
+             class="w-full md:w-1/3 rounded-lg mb-6 md:mb-0 md:mr-6">
+        <div>
+          <h3 class="text-2xl font-bold mb-2">2. Dwie Wieże</h3>
+          <p class="mb-2">Drużyna zostaje rozdzielona. Frodo i Sam kontynuują podróż z pomocą Golluma, a Aragorn, Legolas i Gimli próbują ocalić Rohan przed siłami Sarumana.</p>
+          <blockquote class="italic text-gray-600">„Nadzieja może być odnaleziona nawet w najmroczniejszych czasach.”</blockquote>
+        </div>
+      </div>
+
+      <!-- Powrót Króla -->
+      <div class="flex flex-col md:flex-row items-center bg-white rounded-xl shadow-md p-6">
+        <img src="https://upload.wikimedia.org/wikipedia/en/1/11/The_Return_of_the_King_cover.gif"
+             alt="Powrót Króla"
+             class="w-full md:w-1/3 rounded-lg mb-6 md:mb-0 md:mr-6">
+        <div>
+          <h3 class="text-2xl font-bold mb-2">3. Powrót Króla</h3>
+          <p class="mb-2">Ostateczna bitwa o Śródziemie. Aragorn odzyskuje tron Gondoru, a Frodo staje twarzą w twarz z przeznaczeniem na Górze Przeznaczenia.</p>
+          <blockquote class="italic text-gray-600">„Nie wszyscy, którzy wędrują, są zagubieni.”</blockquote>
+        </div>
+      </div>
+    </section>
+  </div>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends 'layout.twig' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+  <div id="content">
+    <section class="text-center mb-10">
+      <h2 class="text-4xl font-semibold mb-4">Główne Postacie</h2>
+      <p class="text-lg max-w-2xl mx-auto">Poznaj bohaterów, którzy odegrali kluczowe role w historii Pierścienia i losach Śródziemia.</p>
+    </section>
+
+    <section class="grid md:grid-cols-3 gap-8">
+      <!-- Frodo -->
+      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
+        <img src="https://static.wikia.nocookie.net/lotr/images/6/6f/Frodo.png"
+             alt="Frodo Baggins"
+             class="rounded-lg mb-4 w-full h-60 object-cover">
+        <h3 class="text-xl font-bold mb-2">Frodo Baggins</h3>
+        <p>Hobbit z Shire, dziedzic Pierścienia. Odważny, skromny i pełen determinacji.</p>
+      </div>
+
+      <!-- Gandalf -->
+      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
+        <img src="https://static.wikia.nocookie.net/lotr/images/0/0e/Gandalf_the_Grey.png"
+             alt="Gandalf"
+             class="rounded-lg mb-4 w-full h-60 object-cover">
+        <h3 class="text-xl font-bold mb-2">Gandalf</h3>
+        <p>Potężny czarodziej i przewodnik Drużyny Pierścienia. Symbol mądrości i światła.</p>
+      </div>
+
+      <!-- Aragorn -->
+      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
+        <img src="https://static.wikia.nocookie.net/lotr/images/5/5c/Aragorn.png"
+             alt="Aragorn"
+             class="rounded-lg mb-4 w-full h-60 object-cover">
+        <h3 class="text-xl font-bold mb-2">Aragorn</h3>
+        <p>Potomek królów, znany także jako Obieżyświat. Wojownik, przywódca i obrońca wolnych ludów.</p>
+      </div>
+
+      <!-- Legolas -->
+      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
+        <img src="https://static.wikia.nocookie.net/lotr/images/2/2e/Legolas.png"
+             alt="Legolas"
+             class="rounded-lg mb-4 w-full h-60 object-cover">
+        <h3 class="text-xl font-bold mb-2">Legolas</h3>
+        <p>Elf z Mrocznej Puszczy. Zwinny łucznik o bystrym oku i nieugiętym duchu.</p>
+      </div>
+
+      <!-- Sam -->
+      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
+        <img src="https://static.wikia.nocookie.net/lotr/images/1/1d/Samwise.png"
+             alt="Samwise Gamgee"
+             class="rounded-lg mb-4 w-full h-60 object-cover">
+        <h3 class="text-xl font-bold mb-2">Samwise Gamgee</h3>
+        <p>Wierny towarzysz Froda. Uosobienie lojalności i odwagi zwykłych ludzi.</p>
+      </div>
+
+      <!-- Gollum -->
+      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
+        <img src="https://static.wikia.nocookie.net/lotr/images/3/3a/Gollum.png"
+             alt="Gollum"
+             class="rounded-lg mb-4 w-full h-60 object-cover">
+        <h3 class="text-xl font-bold mb-2">Gollum</h3>
+        <p>Były właściciel Pierścienia, rozdarty między obsesją a resztką człowieczeństwa.</p>
+      </div>
+    </section>
+{% endblock %}
+
+<pre>----{{ dump(people) }}</pre>
