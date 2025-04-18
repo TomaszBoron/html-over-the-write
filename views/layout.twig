@@ -3,12 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="view-transition" content="same-origin" />
     {% block head %}{% endblock %}
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
-    <script src="https://unpkg.com/htmx.org/dist/ext/transition.js"></script>
-
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@hotwired/turbo@latest/dist/turbo.es2017-esm.min.js"></script>
+    
     <title>Władca Pierścieni – {{title}}</title>
+
+    <script type="module">
+      {# Turbo.session.drive = false #}
+    </script>
+    <style>
+    </style>
   </head>
 
   <body class="bg-gray-100 text-gray-900 font-sans">
@@ -21,36 +27,18 @@
               <a
                 class="hover:bg-green-700"
                 href="/"
-                hx-get="/"
-                hx-swap="innerHTML transition:true"
-                hx-target="#main"
-                hx-select="#content"
-                hx-ext="transition"
-                hx-replace-url="true"
               >Strona Główna</a>
             </li>
             <li>
               <a
                 class="hover:bg-green-700"
                 href="/characters"
-                hx-get="/characters"
-                hx-swap="innerHTML transition:true"
-                hx-target="#main"
-                hx-select="#content"
-                hx-ext="transition"
-                hx-replace-url="true"
                 >Postacie</a>
             </li>
             <li>
               <a
                 class="hover:bg-green-700"
-                href="/about" 
-                hx-get="/about" 
-                hx-swap="innerHTML transition:true"
-                hx-target="#main" 
-                hx-select="#content"
-                hx-ext="transition"
-                hx-replace-url="true"
+                href="/about"
               >Trylogia</a>
             </li>
           </ul>

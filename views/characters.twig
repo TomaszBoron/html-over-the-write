@@ -40,16 +40,13 @@
         </thead>
         <tbody class="bg-white divide-y divide-gray-200">
           {% for character in characters %}
-            <tr
-                hx-get="/characters/{{character.id}}"
-                hx-swap="innerHTML transition:true"
-                hx-target="#details"
-                hx-select="#details"
-                hx-ext="transition"
-                class="hover:bg-green-100 cursor-pointer"
-            >
+            <tr class="hover:bg-green-100 cursor-pointer">
               <td class="px-6 py-4 whitespace-nowrap">
-                <div class="text-sm text-gray-900">{{ character.name }}</div>
+                <div class="text-sm text-gray-900">
+                  <a href="/characters/{{character.id}}">
+                    {{ character.name }}
+                  </a>
+                </div>
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
                 <div class="text-sm text-gray-900">{{ character.height }}</div>
