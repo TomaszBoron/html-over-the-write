@@ -11,7 +11,6 @@ var usersCart = require('./routes/cart');
 
 var app = express();
 
-// view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'twig');
 
@@ -21,7 +20,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// LotR
 app.use('/', indexRouter);
 app.use('/products', productsRouter); 
 app.use('/products/:id', productsRouter);
