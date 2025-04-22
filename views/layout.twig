@@ -5,11 +5,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="view-transition" content="same-origin" />
-  <meta name="turbo-prefetch" content="true">
+  <meta name="turbo-prefetch" content="false">
+  <meta name="turbo-refresh-method" content="morph">
+  {# <meta name="turbo-refresh-scroll" content="preserve"> #}
   <title>Sklep Internetowy - {{ title }}</title>
-  {# <script type="module" src="https://cdn.jsdelivr.net/npm/@hotwired/turbo@latest/dist/turbo.es2017-esm.min.js"></script> #}
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@hotwired/turbo@latest/dist/turbo.es2017-esm.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    
+  </script>
   {% block head %}{% endblock %}
 </head>
 

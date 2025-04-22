@@ -21,15 +21,9 @@ router.get('/:id', async function(req, res, next) {
       productsService.getAll(),
       productsService.getById(id)
     ])
-
-    const data = await Promise.all([
-      response[0].json(),
-      response[1].json()
-    ])
-
-    res.render('products', { title: 'produkty', products: data[0], productDetail: data[1] });
+    res.render('product-details', { title: 'produkty', products: response[0], productDetail: response[1] });
   } catch (err) {
-    res.status(500).send('Wystąpił błąd');
+    res.status(500).send('Wystąpił błąd', err);
   }
 });
 

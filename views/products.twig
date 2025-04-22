@@ -4,6 +4,22 @@
 {% endblock %}
 
 {% block main %}
+    <!-- Toast -->
+    <turbo-frame id="cart-success"></turbo-frame>
+    <!-- Pordukt Popup -->
+    <dialog open class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 m-auto">
+      <div class="bg-white rounded-xl shadow-2xl max-w-xl w-full relative">
+        <a href="/products"
+          data-turbo-frame="product-details"
+          data-turbo-action="replace"
+          class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl">&times;</a>
+        <div class="flex flex-col md:flex-row gap-6">
+          <turbo-frame id="product-details"></turbo-frame>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
     <!-- Sklep -->
     <section class="container mx-auto px-4 py-12">
       <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Sklep</h2>
@@ -11,43 +27,23 @@
         <!-- Produkty -->
         {% for product in products %}
         <div class="bg-white rounded-2xl shadow p-4 text-center">
-          <a href="/products/{{ product.id }}">
-            <img src="{{product.image}}" alt="{{product.title}}" class="mx-auto mb-4 rounded-xl h-48 w-96 object-contain" />
+          <a 
+            href="/products/{{ product.id }}"
+            data-turbo-frame="product-details"
+            data-turbo-action="replace"
+          >
+            <img src="{{product.image}}" alt="{{product.title}}" class="mx-auto mb-4 rounded-xl h-48 w-96 object-contain"/>
             <h4 class="text-lg font-semibold">{{product.title}}</h4>
           </a>
           <p class="text-gray-700 font-bold my-2">{{product.price}} zł</p>
-          <a href="/cart/add/{{ product.id }}" class="d-block mt-4 bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition">Dodaj do koszyka</a>
+          <a
+            href="/cart/add/{{ product.id }}"
+            data-turbo-frame="cart-success"
+            data-turbo-method="post"
+            class="d-block mt-4 bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition"
+          >Dodaj do koszyka</a>
         </div>
         {% endfor %}
-        <!-- Można dodać więcej produktów tutaj -->
       </div>
     </section>
-
-    {% if productDetail %}
-    <section class="container mx-auto px-4 py-12">
-      <!-- Popup Produktu -->
-      <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-        <div class="fixed inset-0 bg-gray-500/75 transition-opacity" aria-hidden="true"></div>
-        <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
-          <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-            <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-              <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-              <div class="m-6">
-                <div class="flex justify-end">
-                  <a href="/products" class="text-gray-500 hover:text-gray-800 text-xl">&times;</a>
-                </div>
-                <div class="text-center">
-                  <img src="{{ productDetail.image }}" alt="Słuchawki" class="mx-auto mb-4 rounded-xl max-h-60" />
-                  <h3 class="text-2xl font-bold mb-2">{{ productDetail.title }}</h3>
-                  <p class="text-gray-600 mb-4">{{ productDetail.description }}</p>
-                  <p class="text-xl font-semibold mb-4">{{ productDetail.price }} zł</p>
-                  <a href="/cart/add/{{ productDetail.id }}" class="bg-gray-800 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition">Dodaj do koszyka</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    {% endif %}
 {% endblock %}

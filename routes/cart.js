@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
   } });
 });
 
-router.get('/add/:id', async function(req, res, next) {
+router.post('/add/:id', async function(req, res, next) {
   try {
     const productId = req.params.id
     const addToCartProduct = await productsService.getById(productId)
