@@ -1,26 +1,25 @@
 var express = require('express');
 var router = express.Router();
 
-var apiUrl = 'https://lotrapi.co/api/v1/characters'
+var productsService = require("../services/products.service.js")
 
-/* GET characters page. */
+/* GET products page. */
 router.get('/', async function(req, res, next) {
   try {
-    const response = await fetch(apiUrl);
-    const data = await response.json();
-    res.render('characters', { title: 'Postacie', characters: data.results });
+    const products = await productsService.getAll();
+    res.render('products', { title: 'produkty', products });
   } catch (err) {
     res.status(500).send('Wystąpił błąd');
   }
 });
 
-/* GET characters page. */
+/* GET product page. */
 router.get('/:id', async function(req, res, next) {
   const id = req.params['id']
   try {
     const response = await Promise.all([ 
-      fetch(apiUrl),
-      fetch(`${apiUrl}/${id}`)
+      productsService.getAll(),
+      productsService.getById(id)
     ])
 
     const data = await Promise.all([
@@ -28,7 +27,7 @@ router.get('/:id', async function(req, res, next) {
       response[1].json()
     ])
 
-    res.render('characters', { title: 'Postacie', characters: data[0].results, character: data[1] });
+    res.render('products', { title: 'produkty', products: data[0], productDetail: data[1] });
   } catch (err) {
     res.status(500).send('Wystąpił błąd');
   }

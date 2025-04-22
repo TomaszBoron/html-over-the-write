@@ -1,58 +1,39 @@
+    
 <!DOCTYPE html>
 <html lang="pl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="view-transition" content="same-origin" />
-    <meta name="turbo-prefetch" content="true">
-    {% block head %}{% endblock %}
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@hotwired/turbo@latest/dist/turbo.es2017-esm.min.js"></script>
-    
-    <title>Władca Pierścieni – {{title}}</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="view-transition" content="same-origin" />
+  <meta name="turbo-prefetch" content="true">
+  <title>Sklep Internetowy - {{ title }}</title>
+  {# <script type="module" src="https://cdn.jsdelivr.net/npm/@hotwired/turbo@latest/dist/turbo.es2017-esm.min.js"></script> #}
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  {% block head %}{% endblock %}
+</head>
 
-    <script type="module">
-      {# Turbo.session.drive = false #}
-    </script>
-    <style>
-    </style>
-  </head>
+<body class="bg-gray-100 font-sans">
+  <!-- Header -->
+  <header class="bg-white shadow-md">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-gray-800">SklepOnline</h1>
+      <nav class="space-x-4">
+        <a href="/" class="text-gray-700 hover:text-gray-900">Home</a>
+        <a href="/products" class="text-gray-700 hover:text-gray-900">Sklep</a>
+        <a href="/about" class="text-gray-700 hover:text-gray-900">Kontakt</a>
+        <a href="/cart" class="text-gray-700 hover:text-gray-900">Koszyk</a>
+      </nav>
+    </div>
+  </header>
 
-  <body class="bg-gray-100 text-gray-900 font-sans">
-    <header class="bg-black text-white p-6 shadow-lg">
-      <div class="container mx-auto flex justify-between items-center">
-        <h1 class="text-3xl font-bold">Władca Pierścieni</h1>
-        <nav>
-          <ul class="flex space-x-6 text-lg">
-            <li>
-              <a
-                class="hover:bg-green-700"
-                href="/"
-              >Strona Główna</a>
-            </li>
-            <li>
-              <a
-                class="hover:bg-green-700"
-                href="/characters"
-                >Postacie</a>
-            </li>
-            <li>
-              <a
-                class="hover:bg-green-700"
-                href="/about"
-              >Trylogia</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+  {% block main %}{% endblock %}
 
-    <main id="main" class="container mx-auto mt-10 px-4">
-      {% block body %}{% endblock %}
-    </main>
-
-    <footer class="bg-black text-white text-center p-6 mt-12">
-      <p>&copy; 2025 Strona fanowska "Władcy Pierścieni" – stworzona z miłości do książek Tolkiena.</p>
-    </footer>
-  </body>
+  <!-- Stopka -->
+  <footer class="bg-white border-t py-6 mt-12">
+    <div class="container mx-auto px-4 text-center text-gray-600">
+      &copy; 2025 SklepOnline. Wszelkie prawa zastrzeżone.
+    </div>
+  </footer>
+</body>
 </html>

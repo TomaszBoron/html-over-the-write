@@ -3,49 +3,25 @@
 {% block head %}
 {% endblock %}
 
-{% block body %}
-  <div id="content">
-    <section class="text-center mb-10">
-      <h2 class="text-4xl font-semibold mb-4">Trylogia Władcy Pierścieni</h2>
-      <p class="text-lg max-w-2xl mx-auto">Trzy części legendarnej sagi J.R.R. Tolkiena – opowieść o Pierścieniu, przyjaźni, poświęceniu i walce dobra ze złem.</p>
-    </section>
-
-    <section class="space-y-12">
-      <!-- Drużyna Pierścienia -->
-      <div class="flex flex-col md:flex-row items-center bg-white rounded-xl shadow-md p-6">
-        <img src="https://upload.wikimedia.org/wikipedia/en/8/8e/The_Fellowship_of_the_Ring_cover.gif"
-             alt="Drużyna Pierścienia"
-             class="w-full md:w-1/3 rounded-lg mb-6 md:mb-0 md:mr-6">
-        <div>
-          <h3 class="text-2xl font-bold mb-2">1. Drużyna Pierścienia</h3>
-          <p class="mb-2">Frodo Baggins wyrusza z Shire, aby zniszczyć Jedyny Pierścień. Wraz z nim podąża dziewięcioosobowa drużyna złożona z hobbitów, ludzi, elfa, krasnoluda i czarodzieja.</p>
-          <blockquote class="italic text-gray-600">„Wyruszam na tę wyprawę, choć nie wiem, dokąd ona prowadzi.”</blockquote>
-        </div>
+{% block main %}
+  <section class="container mx-auto px-4 py-12 max-w-2xl">
+    <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Skontaktuj się z nami</h2>
+    <form class="bg-white rounded-xl shadow-md p-6 space-y-6">
+      <div>
+        <label for="name" class="block text-gray-700 font-medium mb-2">Imię i nazwisko</label>
+        <input type="text" id="name" name="name" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400" required />
       </div>
-
-      <!-- Dwie Wieże -->
-      <div class="flex flex-col md:flex-row items-center bg-white rounded-xl shadow-md p-6">
-        <img src="https://upload.wikimedia.org/wikipedia/en/a/a1/The_Two_Towers_cover.gif"
-             alt="Dwie Wieże"
-             class="w-full md:w-1/3 rounded-lg mb-6 md:mb-0 md:mr-6">
-        <div>
-          <h3 class="text-2xl font-bold mb-2">2. Dwie Wieże</h3>
-          <p class="mb-2">Drużyna zostaje rozdzielona. Frodo i Sam kontynuują podróż z pomocą Golluma, a Aragorn, Legolas i Gimli próbują ocalić Rohan przed siłami Sarumana.</p>
-          <blockquote class="italic text-gray-600">„Nadzieja może być odnaleziona nawet w najmroczniejszych czasach.”</blockquote>
-        </div>
+      <div>
+        <label for="email" class="block text-gray-700 font-medium mb-2">Adres e-mail</label>
+        <input type="email" id="email" name="email" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400" required />
       </div>
-
-      <!-- Powrót Króla -->
-      <div class="flex flex-col md:flex-row items-center bg-white rounded-xl shadow-md p-6">
-        <img src="https://upload.wikimedia.org/wikipedia/en/1/11/The_Return_of_the_King_cover.gif"
-             alt="Powrót Króla"
-             class="w-full md:w-1/3 rounded-lg mb-6 md:mb-0 md:mr-6">
-        <div>
-          <h3 class="text-2xl font-bold mb-2">3. Powrót Króla</h3>
-          <p class="mb-2">Ostateczna bitwa o Śródziemie. Aragorn odzyskuje tron Gondoru, a Frodo staje twarzą w twarz z przeznaczeniem na Górze Przeznaczenia.</p>
-          <blockquote class="italic text-gray-600">„Nie wszyscy, którzy wędrują, są zagubieni.”</blockquote>
-        </div>
+      <div>
+        <label for="message" class="block text-gray-700 font-medium mb-2">Wiadomość</label>
+        <textarea id="message" name="message" rows="5" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400" required></textarea>
       </div>
-    </section>
-  </div>
+      <div class="text-center">
+        <button type="submit" class="bg-gray-800 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition">Wyślij wiadomość</button>
+      </div>
+    </form>
+  </section>
 {% endblock %}

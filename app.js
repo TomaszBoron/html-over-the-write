@@ -5,10 +5,9 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var charactersRouter = require('./routes/characters');
+var productsRouter = require('./routes/products');
 var abountRouter = require('./routes/about');
-var htmxRouter = require('./routes/htmx');
-var usersRouter = require('./routes/users');
+var usersCart = require('./routes/cart');
 
 var app = express();
 
@@ -24,12 +23,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // LotR
 app.use('/', indexRouter);
-app.use('/characters', charactersRouter); 
-app.use('/characters/:id', charactersRouter);
+app.use('/products', productsRouter); 
+app.use('/products/:id', productsRouter);
 app.use('/about', abountRouter);
-
-app.use('/htmx', htmxRouter);
-app.use('/users', usersRouter);
+app.use('/cart', usersCart);
+app.use('/cart/:id', usersCart);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
