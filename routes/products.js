@@ -5,9 +5,12 @@ var productsService = require("../services/products.service.js")
 
 /* GET products page. */
 router.get('/', async function (req, res, next) {
+  const name = req.query.name
+  
   try {
     const products = await productsService.getAll();
-    res.render('products', { title: 'produkty', products });
+    const productsFiltred = products.filter(product => product.title.includes(name || ""))
+    res.render('products', { title: 'produkty', products: productsFiltred, searchQuery: name });
   } catch (err) {
     res.status(500).send('Wystąpił błąd');
   }

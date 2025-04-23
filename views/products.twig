@@ -6,15 +6,19 @@
 	<dialog open class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 m-auto rounded-xl">
 		<div class="bg-white rounded-xl shadow-2xl max-w-xl w-full relative overflow-hidden">
 			<a href="/products" data-turbo-action="replace" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl">&times;</a>
-      <turbo-frame id="product-details"></turbo-frame>
+			<turbo-frame id="product-details"></turbo-frame>
 		</div>
 	</dialog>
 
 	<section class="container mx-auto px-4 py-12">
 		<h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Sklep</h2>
-		<div
-			class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-			<!-- Produkty -->
+
+		<form action="/products" method="get" data-turbo="true">
+      <input type="text" name="name" value="{{searchQuery}}" class="shadow appearance-none border rounded ext-gray-700 bg-white p-3 my-6" />
+      <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white p-3">Serach</button>
+    </form>
+
+		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 			{% for product in products %}
 				<div class="bg-white rounded-2xl shadow p-4 text-center">
 					<a href="/products/{{ product.id }}" data-turbo-frame="product-details" data-turbo-action="replace">
