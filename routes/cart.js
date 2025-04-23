@@ -13,11 +13,14 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/add/:id', async function(req, res, next) {
+  res.setHeader("Content-Type", "text/html")
+  res.type('text/vnd.turbo-stream.html');
   try {
     const productId = req.params.id
     const addToCartProduct = await productsService.getById(productId)
     store.push(addToCartProduct)
-    res.redirect('/cart')
+    
+    res.render('cart-success', { added: store.slice(-1)[0] });
   } catch (err) {
     res.status(200).send(err);
   }

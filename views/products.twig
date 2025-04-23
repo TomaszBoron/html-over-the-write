@@ -1,49 +1,32 @@
 {% extends 'layout.twig' %}
 
-{% block head %}
-{% endblock %}
+{% block head %}{% endblock %}
 
 {% block main %}
-    <!-- Toast -->
-    <turbo-frame id="cart-success"></turbo-frame>
-    <!-- Pordukt Popup -->
-    <dialog open class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 m-auto rounded-xl">
-      <div class="bg-white rounded-xl shadow-2xl max-w-xl w-full relative overflow-hidden">
-        <a href="/products"
-          data-turbo-frame="product-details"
-          data-turbo-action="replace"
-          class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl">&times;</a>
-        <div class="flex flex-col md:flex-row gap-6">
-          {# <turbo-frame id="product-details"></turbo-frame> #}
-        </div>
-        </div>
-      </div>
-    </dialog>
+	<dialog open class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 m-auto rounded-xl">
+		<div class="bg-white rounded-xl shadow-2xl max-w-xl w-full relative overflow-hidden">
+			<a href="/products" data-turbo-action="replace" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl">&times;</a>
+      <turbo-frame id="product-details"></turbo-frame>
+		</div>
+	</dialog>
 
-    <!-- Sklep -->
-    <section class="container mx-auto px-4 py-12">
-      <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Sklep</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        <!-- Produkty -->
-        {% for product in products %}
-        <div class="bg-white rounded-2xl shadow p-4 text-center">
-          <a 
-            href="/products/{{ product.id }}"
-            data-turbo-frame="product-details"
-            data-turbo-action="replace"
-          >
-            <img src="{{product.image}}" alt="{{product.title}}" class="mx-auto mb-4 rounded-xl h-48 w-96 object-contain"/>
-            <h4 class="text-lg font-semibold">{{product.title}}</h4>
-          </a>
-          <p class="text-gray-700 font-bold my-2">{{product.price}} zł</p>
-          <a
-            href="/cart/add/{{ product.id }}"
-            data-turbo-frame="cart-success"
-            data-turbo-method="post"
-            class="d-block mt-4 bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition"
-          >Dodaj do koszyka</a>
-        </div>
-        {% endfor %}
-      </div>
-    </section>
+	<section class="container mx-auto px-4 py-12">
+		<h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Sklep</h2>
+		<div
+			class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+			<!-- Produkty -->
+			{% for product in products %}
+				<div class="bg-white rounded-2xl shadow p-4 text-center">
+					<a href="/products/{{ product.id }}" data-turbo-frame="product-details" data-turbo-action="replace">
+						<img src="{{product.image}}" alt="{{product.title}}" class="mx-auto mb-4 rounded-xl h-48 w-96 object-contain" loading="lazy"/>
+						<h4 class="text-lg font-semibold truncate">{{product.title}}</h4>
+					</a>
+					<p class="text-gray-700 font-bold my-2">{{product.price}}
+						zł</p>
+					<a href="/cart/add/{{ product.id }}" data-turbo-frame="cart-success" data-turbo-method="post" class="d-block mt-4 bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition">Dodaj do koszyka</a>
+				</div>
+			{% endfor %}
+		</div>
+	</section>
 {% endblock %}
+

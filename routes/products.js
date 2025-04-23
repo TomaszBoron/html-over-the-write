@@ -4,7 +4,7 @@ var router = express.Router();
 var productsService = require("../services/products.service.js")
 
 /* GET products page. */
-router.get('/', async function(req, res, next) {
+router.get('/', async function (req, res, next) {
   try {
     const products = await productsService.getAll();
     res.render('products', { title: 'produkty', products });
@@ -14,14 +14,14 @@ router.get('/', async function(req, res, next) {
 });
 
 /* GET product page. */
-router.get('/:id', async function(req, res, next) {
+router.get('/:id', async function (req, res, next) {
   const id = req.params['id']
   try {
-    const response = await Promise.all([ 
+    const response = await Promise.all([
       productsService.getAll(),
       productsService.getById(id)
     ])
-    res.render('product-details', { title: 'produkty', products: response[0], productDetail: response[1] });
+    res.render('product-details', { title: 'produkt', products: response[0], productDetail: response[1] });
   } catch (err) {
     res.status(500).send('Wystąpił błąd', err);
   }

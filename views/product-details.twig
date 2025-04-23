@@ -1,28 +1,24 @@
 {% extends 'layout.twig' %}
 
-{% block head %}
-{% endblock %}
+{% block head %}{% endblock %}
 
 {% block main %}
-    <!-- Toast -->
-    <turbo-frame id="cart-success"></turbo-frame>
-    <section class="container mx-auto px-4 py-12 animate-fadeIn">
-        <turbo-frame id="product-details">
-            <!-- Popup Produktu -->
-            <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-            <div class="m-6">
-            <div class="text-center">
-                <img src="{{ productDetail.image }}" alt="Słuchawki" class="mx-auto mb-4 rounded-xl max-h-60 object-contain" height="240" width="240"/>
-                <h3 class="text-2xl font-bold mb-2">{{ productDetail.title }}</h3>
-                <p class="text-gray-600 mb-4">{{ productDetail.description }}</p>
-                <p class="text-xl font-semibold mb-4">{{ productDetail.price }} zł</p>
-                <a 
-                    href="/cart/add/{{ productDetail.id }}" 
-                    data-turbo-frame="cart-success"
-                    data-turbo-method="post"
-                    class="bg-gray-800 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition" 
-                >Dodaj do koszyka</a>
-            </div>
-        </turbo-frame>
-    </section>
+	<section class="container mx-auto px-4 py-12 animate-fadeIn">
+		<turbo-frame id="product-details">
+			<div class="flex flex-col md:flex-row gap-6">
+				<div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+					<div class="m-6">
+						<div class="text-center">
+							<img src="{{ productDetail.image }}" alt="Słuchawki" class="mx-auto mb-4 rounded-xl max-h-60 object-contain" height="240" width="240"/>
+							<h3 class="text-2xl font-bold mb-2">{{ productDetail.title }}</h3>
+							<p class="text-gray-600 mb-4">{{ productDetail.description }}</p>
+							<p class="text-xl font-semibold mb-4">{{ productDetail.price }}zł</p>
+							<a href="/cart/add/{{ productDetail.id }}" data-turbo-frame="cart-success" data-turbo-method="post" class="bg-gray-800 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition">Dodaj do koszyka</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</turbo-frame>
+	</section>
 {% endblock %}
+

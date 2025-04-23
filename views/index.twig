@@ -17,27 +17,19 @@
     <section class="container mx-auto px-4 py-12">
       <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Nasze Produkty</h3>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        <!-- Produkt 1 -->
-        <div class="bg-white rounded-2xl shadow p-4 text-center">
-          <img src="https://plus.unsplash.com/premium_photo-1679513691474-73102089c117?q=80&w=2013&auto=format&fit=crop" alt="Słuchawki" class="mx-auto mb-4 rounded-xl" />
-          <h4 class="text-lg font-semibold">Słuchawki Bezprzewodowe</h4>
-          <p class="text-gray-700 font-bold mt-2">99 zł</p>
-          <button class="mt-4 bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition">Dodaj do koszyka</button>
-        </div>
-        <!-- Produkt 2 -->
-        <div class="bg-white rounded-2xl shadow p-4 text-center">
-          <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=500&q=80" alt="Smartwatch" class="mx-auto mb-4 rounded-xl" />
-          <h4 class="text-lg font-semibold">Smartwatch</h4>
-          <p class="text-gray-700 font-bold mt-2">199 zł</p>
-          <button class="mt-4 bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition">Dodaj do koszyka</button>
-        </div>
-        <!-- Produkt 3 -->
-        <div class="bg-white rounded-2xl shadow p-4 text-center">
-          <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?auto=format&fit=crop&w=500&q=80" alt="Buty sportowe" class="mx-auto mb-4 rounded-xl" />
-          <h4 class="text-lg font-semibold">Buty Sportowe</h4>
-          <p class="text-gray-700 font-bold mt-2">249 zł</p>
-          <button class="mt-4 bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition">Dodaj do koszyka</button>
-        </div>
+        {% for product in products %}
+          <div class="bg-white rounded-2xl shadow p-4 text-center">
+            <img src="{{ product.image }}" alt="{{product.title}}" class="mx-auto mb-4 rounded-xl h-48 w-96 object-contain" />
+            <h4 class="text-lg font-semibold truncate">{{product.title}}</h4>
+            <p class="text-gray-700 font-bold mt-2 mb-4">99 zł</p>
+            <a
+            href="/cart/add/{{ product.id }}"
+            data-turbo-frame="cart-success"
+            data-turbo-method="post"
+            class="d-block mt-4 bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition"
+          >Dodaj do koszyka</a>
+          </div>
+        {% endfor %}
       </div>
     </section>
   </div>
