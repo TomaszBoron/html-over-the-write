@@ -7,15 +7,15 @@
     <!-- Toast -->
     <turbo-frame id="cart-success"></turbo-frame>
     <!-- Pordukt Popup -->
-    <dialog open class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 m-auto">
-      <div class="bg-white rounded-xl shadow-2xl max-w-xl w-full relative">
+    <dialog open class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 m-auto rounded-xl">
+      <div class="bg-white rounded-xl shadow-2xl max-w-xl w-full relative overflow-hidden">
         <a href="/products"
           data-turbo-frame="product-details"
           data-turbo-action="replace"
           class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl">&times;</a>
         <div class="flex flex-col md:flex-row gap-6">
-          <turbo-frame id="product-details"></turbo-frame>
-          </div>
+          {# <turbo-frame id="product-details"></turbo-frame> #}
+        </div>
         </div>
       </div>
     </dialog>
