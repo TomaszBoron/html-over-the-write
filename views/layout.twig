@@ -1,47 +1,51 @@
-    
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="view-transition" content="same-origin" />
-  <meta name="turbo-prefetch" content="false">
-  <meta name="turbo-refresh-method" content="morph">
-  {# <meta name="turbo-refresh-scroll" content="preserve"> #}
-  <title>Sklep Internetowy - {{ title }}</title>
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@hotwired/turbo@latest/dist/turbo.es2017-esm.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    
-  </script>
-  {% block head %}{% endblock %}
-</head>
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="view-transition" content="same-origin"/>
+		<meta name="turbo-prefetch" content="false">
+		<meta
+		name="turbo-refresh-method" content="morph">
+		{# <meta name="turbo-refresh-scroll" content="preserve"> #}
+		<title>Sklep Internetowy -
+			{{ title }}</title>
+		<script type="module" src="https://cdn.jsdelivr.net/npm/@hotwired/turbo@latest/dist/turbo.es2017-esm.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script>
+		</script>
+		{% block head %}{% endblock %}
+	</head>
 
-<body class="bg-gray-100 font-sans">
-  <!-- Header -->
-  <header class="bg-white shadow-md">
-    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-gray-800">SklepOnline</h1>
-      <nav class="space-x-4">
-        <a href="/" class="text-gray-700 hover:text-gray-900">Home</a>
-        <a href="/products" class="text-gray-700 hover:text-gray-900">Sklep</a>
-        <a href="/about" class="text-gray-700 hover:text-gray-900">Kontakt</a>
-        <a href="/cart" class="text-gray-700 hover:text-gray-900">Koszyk</a>
-      </nav>
-    </div>
-  </header>
+	<body
+		class="bg-gray-100 font-sans">
+		<!-- Header -->
+		<header class="bg-white shadow-md">
+			<div class="container mx-auto px-4 py-4 flex justify-between items-center">
+				<h1 class="text-2xl font-bold text-gray-800">SklepOnline</h1>
+				<nav class="space-x-4">
+					<a href="/" class="text-gray-700 hover:text-gray-900">Home</a>
+					<a href="/products" class="text-gray-700 hover:text-gray-900">Sklep</a>
+					<a href="/about" class="text-gray-700 hover:text-gray-900">Kontakt</a>
+					<a href="/cart" class="text-gray-700 hover:text-gray-900 relative d-inline-block">
+            Koszyk <span id="cart-counter"></span>
+          </a>
+				</nav>
+			</div>
+		</header>
 
-  <!-- Toast -->
-  <div id="cart-success" class="fixed bottom-6 text-xl right-6"></div>
+		<!-- Toast -->
+		<div id="cart-success" class="fixed bottom-6 text-xl right-6"></div>
+    <turbo-stream-source src="/cart/events" />
 
-  {% block main %}{% endblock %}
+		{% block main %}{% endblock %}
 
-  <!-- Stopka -->
-  <footer class="bg-white border-t py-6 mt-12">
-    <div class="container mx-auto px-4 text-center text-gray-600">
-      &copy; 2025 SklepOnline. Wszelkie prawa zastrzeżone.
-    </div>
-  </footer>
-</body>
+		<!-- Stopka -->
+		<footer class="bg-white border-t py-6 mt-12">
+			<div class="container mx-auto px-4 text-center text-gray-600">
+				&copy; 2025 SklepOnline. Wszelkie prawa zastrzeżone.
+			</div>
+		</footer>
+	</body>
 </html>
