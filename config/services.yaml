@@ -16,5 +16,11 @@ services:
     App\:
         resource: '../src/'
 
+    App\Service\StrapiApiService:
+        arguments:
+            $baseUrl: 'http://symfony_node:1337/api'
+
+
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
