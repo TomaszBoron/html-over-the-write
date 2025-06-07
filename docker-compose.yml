@@ -12,6 +12,8 @@ services:
             APP_ENV: dev
         depends_on:
             - db
+        networks:
+            - app-network
 
     nginx:
         image: nginx:latest
@@ -20,9 +22,12 @@ services:
             - "8080:80"
         volumes:
             - ./:/var/www/html
-            - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+            - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
         depends_on:
             - php
+            - node
+        networks:
+            - app-network
 
     db:
         image: postgres:15
@@ -33,14 +38,27 @@ services:
             POSTGRES_PASSWORD: symfony
         volumes:
             - db_data:/var/lib/postgresql/data
+        networks:
+            - app-network
 
     node:
         image: node:20
         container_name: symfony_node
-        working_dir: /var/www/html
+        working_dir: /app
         volumes:
-            - ./:/var/www/html
-        command: tail -f /dev/null # możesz zmienić np. na "npm run dev"
+            - ./strapi-cms:/app
+        command: npm run develop
+        environment:
+            - HOST=0.0.0.0
+            - PORT=1337
+        ports:
+            - "1337:1337"
+        networks:
+            - app-network
 
 volumes:
     db_data:
+
+networks:
+    app-network:
+        driver: bridge

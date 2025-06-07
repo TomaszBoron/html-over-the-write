@@ -82,22 +82,47 @@ class __TwigTemplate_11445038161acb156ac4126fb4b2011a extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        yield "<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+        yield "<div class=\"example-wrapper\">
+    <!-- Hero -->
+    <section class=\"bg-sky-800 text-white py-20\">
+        <div class=\"container mx-auto px-6 text-center max-w-3xl\">
+            <h1 class=\"text-4xl md:text-5xl font-extrabold mb-4\">Znajdź idealny produkt dla siebie</h1>
+            <p class=\"mb-8 text-lg md:text-xl\">W naszym sklepie znajdziesz szeroki wybór produktów najwyższej jakości.</p>
+            <a href=\"#products\"
+               class=\"bg-white text-indigo-600 font-semibold py-3 px-6 rounded-lg hover:bg-gray-100 transition\">
+                Zobacz produkty
+            </a>
+        </div>
+    </section>
 
-<div class=\"example-wrapper\">
-    <h1>Hello ";
-        // line 12
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new RuntimeError('Variable "controller_name" does not exist.', 12, $this->source); })()), "html", null, true);
-        yield "! ✅</h1>
+    <!-- Sekcja produktów -->
+    <section id=\"products\" class=\"py-16 bg-gray-100\">
+        <div class=\"container mx-auto px-6 max-w-6xl\">
+            <h2 class=\"text-3xl font-bold mb-10 text-center text-gray-900\">Nasze produkty</h2>
+            <div class=\"grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8\">
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/var/www/html/src/Controller/HomeController.php</code></li>
-        <li>Your template at <code>/var/www/html/templates/home/index.html.twig</code></li>
-    </ul>
+                <!-- Produkt 1 -->
+                <div class=\"bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition\">
+                    <img src=\"https://via.placeholder.com/300x200\" alt=\"Produkt 1\" class=\"w-full h-48 object-cover\" />
+                    <div class=\"p-4\">
+                        <h3 class=\"text-lg font-semibold mb-2\">Produkt 1</h3>
+                        <p class=\"text-indigo-600 font-bold text-xl mb-4\">99,99 zł</p>
+                        <button class=\"w-full bg-sky-800 text-white py-2 rounded hover:bg-indigo-700 transition\">
+                            Dodaj do koszyka
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Stopka -->
+    <footer class=\"bg-white shadow-inner py-8 mt-16\">
+        <div class=\"container mx-auto px-6 text-center text-gray-600\">
+            &copy; 2025 MójSklep. Wszelkie prawa zastrzeżone.
+        </div>
+    </footer>
 </div>
 ";
         
@@ -127,7 +152,7 @@ class __TwigTemplate_11445038161acb156ac4126fb4b2011a extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  93 => 12,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
+        return array (  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -137,19 +162,47 @@ class __TwigTemplate_11445038161acb156ac4126fb4b2011a extends Template
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
 <div class=\"example-wrapper\">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <!-- Hero -->
+    <section class=\"bg-sky-800 text-white py-20\">
+        <div class=\"container mx-auto px-6 text-center max-w-3xl\">
+            <h1 class=\"text-4xl md:text-5xl font-extrabold mb-4\">Znajdź idealny produkt dla siebie</h1>
+            <p class=\"mb-8 text-lg md:text-xl\">W naszym sklepie znajdziesz szeroki wybór produktów najwyższej jakości.</p>
+            <a href=\"#products\"
+               class=\"bg-white text-indigo-600 font-semibold py-3 px-6 rounded-lg hover:bg-gray-100 transition\">
+                Zobacz produkty
+            </a>
+        </div>
+    </section>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/var/www/html/src/Controller/HomeController.php</code></li>
-        <li>Your template at <code>/var/www/html/templates/home/index.html.twig</code></li>
-    </ul>
+    <!-- Sekcja produktów -->
+    <section id=\"products\" class=\"py-16 bg-gray-100\">
+        <div class=\"container mx-auto px-6 max-w-6xl\">
+            <h2 class=\"text-3xl font-bold mb-10 text-center text-gray-900\">Nasze produkty</h2>
+            <div class=\"grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8\">
+
+                <!-- Produkt 1 -->
+                <div class=\"bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition\">
+                    <img src=\"https://via.placeholder.com/300x200\" alt=\"Produkt 1\" class=\"w-full h-48 object-cover\" />
+                    <div class=\"p-4\">
+                        <h3 class=\"text-lg font-semibold mb-2\">Produkt 1</h3>
+                        <p class=\"text-indigo-600 font-bold text-xl mb-4\">99,99 zł</p>
+                        <button class=\"w-full bg-sky-800 text-white py-2 rounded hover:bg-indigo-700 transition\">
+                            Dodaj do koszyka
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Stopka -->
+    <footer class=\"bg-white shadow-inner py-8 mt-16\">
+        <div class=\"container mx-auto px-6 text-center text-gray-600\">
+            &copy; 2025 MójSklep. Wszelkie prawa zastrzeżone.
+        </div>
+    </footer>
 </div>
 {% endblock %}
 ", "home/index.html.twig", "/var/www/html/templates/home/index.html.twig");

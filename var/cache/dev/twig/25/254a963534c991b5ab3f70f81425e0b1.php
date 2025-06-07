@@ -55,21 +55,43 @@ class __TwigTemplate_9d6d6c3954562659d6fdf7f4628e472e extends Template
         yield from $this->unwrap()->yieldBlock('title', $context, $blocks);
         yield "</title>
         <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>\">
+        <script src=\"https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4\"></script>
         ";
-        // line 7
+        // line 8
         yield from $this->unwrap()->yieldBlock('stylesheets', $context, $blocks);
-        // line 9
+        // line 10
         yield "
         ";
-        // line 10
+        // line 11
         yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
-        // line 12
+        // line 13
         yield "    </head>
     <body>
+        <!-- Nagłówek -->
+        <header class=\"bg-white shadow-md\">
+            <div class=\"container mx-auto flex items-center justify-between py-4 px-6\">
+                <a href=\"#\" class=\"text-2xl font-bold text-indigo-600\">MójSklep</a>
+                <nav class=\"space-x-6 text-gray-700 hidden md:flex\">
+                    <a href=\"/\" class=\"hover:text-indigo-600 transition\">Home</a>
+                    <a href=\"/\" class=\"hover:text-indigo-600 transition\">Produkty</a>
+                    <a href=\"#\" class=\"hover:text-indigo-600 transition\">O nas</a>
+                    <a href=\"#\" class=\"hover:text-indigo-600 transition\">Kontakt</a>
+                </nav>
+                <button class=\"md:hidden text-indigo-600 focus:outline-none\">
+                    <!-- ikona menu hamburger -->
+                    <svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-6 w-6\" fill=\"none\"
+                         viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\">
+                        <path stroke-linecap=\"round\" stroke-linejoin=\"round\"
+                              d=\"M4 6h16M4 12h16M4 18h16\" />
+                    </svg>
+                </button>
+            </div>
+        </header>
+
         ";
-        // line 14
+        // line 36
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 15
+        // line 37
         yield "    </body>
 </html>
 ";
@@ -96,7 +118,7 @@ class __TwigTemplate_9d6d6c3954562659d6fdf7f4628e472e extends Template
         yield from [];
     }
 
-    // line 7
+    // line 8
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -106,7 +128,7 @@ class __TwigTemplate_9d6d6c3954562659d6fdf7f4628e472e extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 8
+        // line 9
         yield "        ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -114,7 +136,7 @@ class __TwigTemplate_9d6d6c3954562659d6fdf7f4628e472e extends Template
         yield from [];
     }
 
-    // line 10
+    // line 11
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -124,7 +146,7 @@ class __TwigTemplate_9d6d6c3954562659d6fdf7f4628e472e extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 11
+        // line 12
         yield "        ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -132,7 +154,7 @@ class __TwigTemplate_9d6d6c3954562659d6fdf7f4628e472e extends Template
         yield from [];
     }
 
-    // line 14
+    // line 36
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -161,7 +183,7 @@ class __TwigTemplate_9d6d6c3954562659d6fdf7f4628e472e extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  136 => 14,  128 => 11,  118 => 10,  110 => 8,  100 => 7,  83 => 5,  73 => 15,  71 => 14,  67 => 12,  65 => 10,  62 => 9,  60 => 7,  55 => 5,  49 => 1,);
+        return array (  158 => 36,  150 => 12,  140 => 11,  132 => 9,  122 => 8,  105 => 5,  95 => 37,  93 => 36,  68 => 13,  66 => 11,  63 => 10,  61 => 8,  55 => 5,  49 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -172,6 +194,7 @@ class __TwigTemplate_9d6d6c3954562659d6fdf7f4628e472e extends Template
         <meta charset=\"UTF-8\">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>\">
+        <script src=\"https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4\"></script>
         {% block stylesheets %}
         {% endblock %}
 
@@ -179,6 +202,27 @@ class __TwigTemplate_9d6d6c3954562659d6fdf7f4628e472e extends Template
         {% endblock %}
     </head>
     <body>
+        <!-- Nagłówek -->
+        <header class=\"bg-white shadow-md\">
+            <div class=\"container mx-auto flex items-center justify-between py-4 px-6\">
+                <a href=\"#\" class=\"text-2xl font-bold text-indigo-600\">MójSklep</a>
+                <nav class=\"space-x-6 text-gray-700 hidden md:flex\">
+                    <a href=\"/\" class=\"hover:text-indigo-600 transition\">Home</a>
+                    <a href=\"/\" class=\"hover:text-indigo-600 transition\">Produkty</a>
+                    <a href=\"#\" class=\"hover:text-indigo-600 transition\">O nas</a>
+                    <a href=\"#\" class=\"hover:text-indigo-600 transition\">Kontakt</a>
+                </nav>
+                <button class=\"md:hidden text-indigo-600 focus:outline-none\">
+                    <!-- ikona menu hamburger -->
+                    <svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-6 w-6\" fill=\"none\"
+                         viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\">
+                        <path stroke-linecap=\"round\" stroke-linejoin=\"round\"
+                              d=\"M4 6h16M4 12h16M4 18h16\" />
+                    </svg>
+                </button>
+            </div>
+        </header>
+
         {% block body %}{% endblock %}
     </body>
 </html>
