@@ -38,9 +38,9 @@
 					<p><strong>Minimum Order Quantity:</strong> {{ product.minimumOrderQuantity }}</p>
 				</div>
 
-				<button class="mt-4 w-full bg-sky-800 text-white py-3 rounded hover:bg-indigo-700 transition cursor-pointer">
+				<a href="/cart/add?productId={{ product.id }}&quantity=1" class="mt-4 w-full text-center bg-sky-800 text-white py-3 rounded hover:bg-indigo-700 transition cursor-pointer">
 					Dodaj do koszyka
-				</button>
+				</a>
 			</div>
 		</div>
 
