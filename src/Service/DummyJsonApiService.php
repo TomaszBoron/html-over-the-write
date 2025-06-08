@@ -26,4 +26,32 @@ class DummyJsonApiService
         return $response->toArray()['products'] ?? [];
     }
 
+    /**
+     *
+     * @return array
+     */
+    public function getProductsCategory(): array
+    {
+        $response = $this->client->request('GET', $this->baseUrl . '/products/categories');
+
+        return $response->toArray() ?? [];
+    }
+
+    /**
+     *
+     * @return array
+     */
+    public function getProductsByCategory(?string $categoryName = null): array
+    {
+        $url = $this->baseUrl . '/products/category';
+
+        if ($categoryName !== null) {
+            $url .= '/' . urlencode($categoryName);
+        }
+
+        $response = $this->client->request('GET', $url);
+
+        return $response->toArray()['products'] ?? [];
+    }
+
 }
