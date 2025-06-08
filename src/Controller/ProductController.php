@@ -17,7 +17,7 @@ final class ProductController extends AbstractController
         $this->dummyJsonApi = $dummyJsonApi;
     }
 
-    #[Route('/product', name: 'app_product')]
+    #[Route('/products', name: 'app_product')]
     public function index(Request $request): Response
     {
         $category = $request->query->get('category');
@@ -30,9 +30,23 @@ final class ProductController extends AbstractController
 
         $categories = $this->dummyJsonApi->getProductsCategory();
 
-        return $this->render('product/index.html.twig', [
+        return $this->render('products/index.html.twig', [
             'products' => $products,
             'categories' => $categories,
+        ]);
+    }
+
+    #[Route('/product/{id}', name: 'app_product_detail')]
+    public function detail(string $id): Response
+    {
+        $product = $this->dummyJsonApi->getProductById($id);
+
+        if (!$product) {
+            throw $this->createNotFoundException('Produkt nie znaleziony');
+        }
+
+        return $this->render('product-details/index.html.twig', [
+            'product' => $product,
         ]);
     }
 }

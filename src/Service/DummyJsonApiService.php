@@ -54,4 +54,19 @@ class DummyJsonApiService
         return $response->toArray()['products'] ?? [];
     }
 
+    /**
+     *
+     * @return array|null
+     */
+    public function getProductById(string $id): ?array
+    {
+        $response = $this->client->request('GET', $this->baseUrl . '/products/' . $id);
+
+        if ($response->getStatusCode() === 200) {
+            return $response->toArray();
+        }
+
+        return null;
+    }
+
 }
