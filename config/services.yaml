@@ -20,6 +20,10 @@ services:
         arguments:
             $baseUrl: 'http://symfony_node:1337/api'
 
+    App\Service\DummyJsonApiService:
+        arguments:
+            $baseUrl: 'https://dummyjson.com'
+
 
 
     # add more service definitions when explicit configuration is needed
