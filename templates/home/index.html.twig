@@ -21,9 +21,14 @@
         <div class="container mx-auto px-6 max-w-6xl">
             <h2 class="text-3xl font-bold mb-10 text-center text-gray-900">Nasze produkty</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+
+                {% if products is empty %}
+                    <div class="col-span-1 sm:col-span-2 md:col-span-3 lg:col-span-4 text-center">
+                        <p class="text-gray-600">Brak dostępnych produktów.</p>
+                    </div>
+                {% endif %}
                 
                 {% for product in products %}
-                <!-- Produkt -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
                         <img src="http://localhost:1337{{ product.image.url }}" alt="{{ product.name }}" class="w-full h-48 object-cover" />
                         <div class="p-4">
@@ -35,18 +40,6 @@
                         </div>
                     </div>
                 {% endfor %}
-
-                <!-- Produkt 1 -->
-{#                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">#}
-{#                    <img src="https://via.placeholder.com/300x200" alt="Produkt 1" class="w-full h-48 object-cover" />#}
-{#                    <div class="p-4">#}
-{#                        <h3 class="text-lg font-semibold mb-2">Produkt 1</h3>#}
-{#                        <p class="text-indigo-600 font-bold text-xl mb-4">99,99 zł</p>#}
-{#                        <button class="w-full bg-sky-800 text-white py-2 rounded hover:bg-indigo-700 transition">#}
-{#                            Dodaj do koszyka#}
-{#                        </button>#}
-{#                    </div>#}
-{#                </div>#}
 
             </div>
         </div>
