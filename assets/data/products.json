@@ -13,7 +13,8 @@
 	  "availabilityStatus": "In Stock",
 	  "sku": "BEA-ESS-ESS-001",
 	  "stock": 99,
-	  "description": "The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula."
+	  "description": "The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula.",
+	  "category": "beauty"
 	},
 	{
 	  "id": 2,
@@ -28,7 +29,8 @@
 	  "availabilityStatus": "In Stock",
 	  "sku": "BEA-GLA-EYE-002",
 	  "stock": 34,
-	  "description": "The Eyeshadow Palette with Mirror offers a versatile range of eyeshadow shades for creating stunning eye looks. With a built-in mirror, it's convenient for on-the-go makeup application."
+	  "description": "The Eyeshadow Palette with Mirror offers a versatile range of eyeshadow shades for creating stunning eye looks. With a built-in mirror, it's convenient for on-the-go makeup application.",
+	  "category": "beauty"
 	},
 	{
 	  "id": 3,
@@ -43,7 +45,8 @@
 	  "availabilityStatus": "In Stock",
 	  "sku": "BEA-VEL-POW-003",
 	  "stock": 89,
-	  "description": "The Powder Canister is a finely milled setting powder designed to set makeup and control shine. With a lightweight and translucent formula, it provides a smooth and matte finish."
+	  "description": "The Powder Canister is a finely milled setting powder designed to set makeup and control shine. With a lightweight and translucent formula, it provides a smooth and matte finish.",
+	  "category": "beauty"
 	},
 	{
 	  "id": 4,
@@ -58,7 +61,8 @@
 	  "availabilityStatus": "In Stock",
 	  "sku": "BEA-CHI-LIP-004",
 	  "stock": 91,
-	  "description": "The Red Lipstick is a classic and bold choice for adding a pop of color to your lips. With a creamy and pigmented formula, it provides a vibrant and long-lasting finish."
+	  "description": "The Red Lipstick is a classic and bold choice for adding a pop of color to your lips. With a creamy and pigmented formula, it provides a vibrant and long-lasting finish.",
+	  "category": "beauty"
 	},
 	{
 	  "id": 5,
@@ -73,7 +77,8 @@
 	  "availabilityStatus": "In Stock",
 	  "sku": "BEA-NAI-NAI-005",
 	  "stock": 79,
-	  "description": "The Red Nail Polish offers a rich and glossy red hue for vibrant and polished nails. With a quick-drying formula, it provides a salon-quality finish at home."
+	  "description": "The Red Nail Polish offers a rich and glossy red hue for vibrant and polished nails. With a quick-drying formula, it provides a salon-quality finish at home.",
+	  "category": "beauty"
 	},
 	{
 	  "id": 6,
@@ -90,7 +95,8 @@
 	  "availabilityStatus": "In Stock",
 	  "sku": "FRA-CAL-CAL-006",
 	  "stock": 29,
-	  "description": "CK One by Calvin Klein is a classic unisex fragrance, known for its fresh and clean scent. It's a versatile fragrance suitable for everyday wear."
+	  "description": "CK One by Calvin Klein is a classic unisex fragrance, known for its fresh and clean scent. It's a versatile fragrance suitable for everyday wear.",
+	  "category": "fragrances"
 	},
 	{
 	  "id": 7,
@@ -107,7 +113,8 @@
 	  "availabilityStatus": "In Stock",
 	  "sku": "FRA-CHA-CHA-007",
 	  "stock": 58,
-	  "description": "Coco Noir by Chanel is an elegant and mysterious fragrance, featuring notes of grapefruit, rose, and sandalwood. Perfect for evening occasions."
+	  "description": "Coco Noir by Chanel is an elegant and mysterious fragrance, featuring notes of grapefruit, rose, and sandalwood. Perfect for evening occasions.",
+	  "category": "fragrances"
 	},
 	{
 	  "id": 8,
@@ -124,7 +131,8 @@
 	  "availabilityStatus": "In Stock",
 	  "sku": "FRA-DIO-DIO-008",
 	  "stock": 98,
-	  "description": "J'adore by Dior is a luxurious and floral fragrance, known for its blend of ylang-ylang, rose, and jasmine. It embodies femininity and sophistication."
+	  "description": "J'adore by Dior is a luxurious and floral fragrance, known for its blend of ylang-ylang, rose, and jasmine. It embodies femininity and sophistication.",
+	  "category": "fragrances"
 	},
 	{
 	  "id": 9,
@@ -141,7 +149,8 @@
 	  "availabilityStatus": "Low Stock",
 	  "sku": "FRA-DOL-DOL-009",
 	  "stock": 4,
-	  "description": "Dolce Shine by Dolce & Gabbana is a vibrant and fruity fragrance, featuring notes of mango, jasmine, and blonde woods. It's a joyful and youthful scent."
+	  "description": "Dolce Shine by Dolce & Gabbana is a vibrant and fruity fragrance, featuring notes of mango, jasmine, and blonde woods. It's a joyful and youthful scent.",
+	  "category": "fragrances"
 	},
 	{
 	  "id": 10,
@@ -158,7 +167,8 @@
 	  "availabilityStatus": "In Stock",
 	  "sku": "FRA-GUC-GUC-010",
 	  "stock": 91,
-	  "description": "Gucci Bloom by Gucci is a floral and captivating fragrance, with notes of tuberose, jasmine, and Rangoon creeper. It's a modern and romantic scent."
+	  "description": "Gucci Bloom by Gucci is a floral and captivating fragrance, with notes of tuberose, jasmine, and Rangoon creeper. It's a modern and romantic scent.",
+	  "category": "fragrances"
 	},
 	{
 	  "id": 11,
@@ -175,7 +185,8 @@
 	  "availabilityStatus": "In Stock",
 	  "sku": "FUR-ANN-ANN-011",
 	  "stock": 88,
-	  "description": "The Annibale Colombo Bed is a luxurious and elegant bed frame, crafted with high-quality materials for a comfortable and stylish bedroom."
+	  "description": "The Annibale Colombo Bed is a luxurious and elegant bed frame, crafted with high-quality materials for a comfortable and stylish bedroom.",
+	  "category": "furniture"
 	},
 	{
 	  "id": 12,
@@ -192,7 +203,8 @@
 	  "availabilityStatus": "In Stock",
 	  "sku": "FUR-ANN-ANN-012",
 	  "stock": 60,
-	  "description": "The Annibale Colombo Sofa is a sophisticated and comfortable seating option, featuring exquisite design and premium upholstery for your living room."
+	  "description": "The Annibale Colombo Sofa is a sophisticated and comfortable seating option, featuring exquisite design and premium upholstery for your living room.",
+	  "category": "furniture"
 	},
 	{
 	  "id": 13,
@@ -209,7 +221,8 @@
 	  "availabilityStatus": "In Stock",
 	  "sku": "FUR-FUR-BED-013",
 	  "stock": 64,
-	  "description": "The Bedside Table in African Cherry is a stylish and functional addition to your bedroom, providing convenient storage space and a touch of elegance."
+	  "description": "The Bedside Table in African Cherry is a stylish and functional addition to your bedroom, providing convenient storage space and a touch of elegance.",
+	  "category": "furniture"
 	},
 	{
 	  "id": 14,
@@ -226,7 +239,8 @@
 	  "availabilityStatus": "In Stock",
 	  "sku": "FUR-KNO-KNO-014",
 	  "stock": 26,
-	  "description": "The Knoll Saarinen Executive Conference Chair is a modern and ergonomic chair, perfect for your office or conference room with its timeless design."
+	  "description": "The Knoll Saarinen Executive Conference Chair is a modern and ergonomic chair, perfect for your office or conference room with its timeless design.",
+	  "category": "furniture"
 	},
 	{
 	  "id": 15,
@@ -243,7 +257,8 @@
 	  "availabilityStatus": "Low Stock",
 	  "sku": "FUR-BAT-WOO-015",
 	  "stock": 7,
-	  "description": "The Wooden Bathroom Sink with Mirror is a unique and stylish addition to your bathroom, featuring a wooden sink countertop and a matching mirror."
+	  "description": "The Wooden Bathroom Sink with Mirror is a unique and stylish addition to your bathroom, featuring a wooden sink countertop and a matching mirror.",
+	  "category": "furniture"
 	},
 	{
 	  "id": 16,
@@ -258,7 +273,8 @@
 	  "availabilityStatus": "In Stock",
 	  "sku": "GRO-BRD-APP-016",
 	  "stock": 8,
-	  "description": "Fresh and crisp apples, perfect for snacking or incorporating into various recipes."
+	  "description": "Fresh and crisp apples, perfect for snacking or incorporating into various recipes.",
+	  "category": "groceries"
 	},
 	{
 	  "id": 17,
@@ -273,7 +289,8 @@
 	  "availabilityStatus": "In Stock",
 	  "sku": "GRO-BRD-BEE-017",
 	  "stock": 86,
-	  "description": "High-quality beef steak, great for grilling or cooking to your preferred level of doneness."
+	  "description": "High-quality beef steak, great for grilling or cooking to your preferred level of doneness.",
+	  "category": "groceries"
 	},
 	{
 	  "id": 18,
@@ -288,7 +305,8 @@
 	  "availabilityStatus": "In Stock",
 	  "sku": "GRO-BRD-FOO-018",
 	  "stock": 46,
-	  "description": "Nutritious cat food formulated to meet the dietary needs of your feline friend."
+	  "description": "Nutritious cat food formulated to meet the dietary needs of your feline friend.",
+	  "category": "groceries"
 	},
 	{
 	  "id": 19,
@@ -304,7 +322,8 @@
 	  "availabilityStatus": "In Stock",
 	  "sku": "GRO-BRD-CHI-019",
 	  "stock": 97,
-	  "description": "Fresh and tender chicken meat, suitable for various culinary preparations."
+	  "description": "Fresh and tender chicken meat, suitable for various culinary preparations.",
+	  "category": "groceries"
 	},
 	{
 	  "id": 20,
@@ -319,7 +338,8 @@
 	  "availabilityStatus": "In Stock",
 	  "sku": "GRO-BRD-COO-020",
 	  "stock": 10,
-	  "description": "Versatile cooking oil suitable for frying, sautéing, and various culinary applications."
+	  "description": "Versatile cooking oil suitable for frying, sautéing, and various culinary applications.",
+	  "category": "groceries"
 	},
 	{
 	  "id": 21,
@@ -334,7 +354,8 @@
 	  "availabilityStatus": "In Stock",
 	  "sku": "GRO-BRD-CUC-021",
 	  "stock": 84,
-	  "description": "Crisp and hydrating cucumbers, ideal for salads, snacks, or as a refreshing side."
+	  "description": "Crisp and hydrating cucumbers, ideal for salads, snacks, or as a refreshing side.",
+	  "category": "groceries"
 	},
 	{
 	  "id": 22,
@@ -349,7 +370,8 @@
 	  "availabilityStatus": "In Stock",
 	  "sku": "GRO-BRD-FOO-022",
 	  "stock": 71,
-	  "description": "Specially formulated dog food designed to provide essential nutrients for your canine companion."
+	  "description": "Specially formulated dog food designed to provide essential nutrients for your canine companion.",
+	  "category": "groceries"
 	},
 	{
 	  "id": 23,
@@ -364,7 +386,8 @@
 	  "availabilityStatus": "In Stock",
 	  "sku": "GRO-BRD-EGG-023",
 	  "stock": 9,
-	  "description": "Fresh eggs, a versatile ingredient for baking, cooking, or breakfast."
+	  "description": "Fresh eggs, a versatile ingredient for baking, cooking, or breakfast.",
+	  "category": "groceries"
 	},
 	{
 	  "id": 24,
@@ -379,7 +402,8 @@
 	  "availabilityStatus": "In Stock",
 	  "sku": "GRO-BRD-FIS-024",
 	  "stock": 74,
-	  "description": "Quality fish steak, suitable for grilling, baking, or pan-searing."
+	  "description": "Quality fish steak, suitable for grilling, baking, or pan-searing.",
+	  "category": "groceries"
 	},
 	{
 	  "id": 25,
@@ -394,7 +418,8 @@
 	  "availabilityStatus": "In Stock",
 	  "sku": "GRO-BRD-GRE-025",
 	  "stock": 33,
-	  "description": "Fresh and vibrant green bell pepper, perfect for adding color and flavor to your dishes."
+	  "description": "Fresh and vibrant green bell pepper, perfect for adding color and flavor to your dishes.",
+	  "category": "groceries"
 	},
 	{
 	  "id": 26,
@@ -409,7 +434,8 @@
 	  "availabilityStatus": "Low Stock",
 	  "sku": "GRO-BRD-GRE-026",
 	  "stock": 3,
-	  "description": "Spicy green chili pepper, ideal for adding heat to your favorite recipes."
+	  "description": "Spicy green chili pepper, ideal for adding heat to your favorite recipes.",
+	  "category": "groceries"
 	},
 	{
 	  "id": 27,
@@ -424,7 +450,8 @@
 	  "availabilityStatus": "In Stock",
 	  "sku": "GRO-BRD-HON-027",
 	  "stock": 34,
-	  "description": "Pure and natural honey in a convenient jar, perfect for sweetening beverages or drizzling over food."
+	  "description": "Pure and natural honey in a convenient jar, perfect for sweetening beverages or drizzling over food.",
+	  "category": "groceries"
 	},
 	{
 	  "id": 28,
@@ -442,7 +469,8 @@
 	  "availabilityStatus": "In Stock",
 	  "sku": "GRO-BRD-CRE-028",
 	  "stock": 27,
-	  "description": "Creamy and delicious ice cream, available in various flavors for a delightful treat."
+	  "description": "Creamy and delicious ice cream, available in various flavors for a delightful treat.",
+	  "category": "groceries"
 	},
 	{
 	  "id": 29,
@@ -457,7 +485,8 @@
 	  "availabilityStatus": "In Stock",
 	  "sku": "GRO-BRD-JUI-029",
 	  "stock": 50,
-	  "description": "Refreshing fruit juice, packed with vitamins and great for staying hydrated."
+	  "description": "Refreshing fruit juice, packed with vitamins and great for staying hydrated.",
+	  "category": "groceries"
 	},
 	{
 	  "id": 30,
@@ -472,7 +501,8 @@
 	  "availabilityStatus": "In Stock",
 	  "sku": "GRO-BRD-KIW-030",
 	  "stock": 99,
-	  "description": "Nutrient-rich kiwi, perfect for snacking or adding a tropical twist to your dishes."
+	  "description": "Nutrient-rich kiwi, perfect for snacking or adding a tropical twist to your dishes.",
+	  "category": "groceries"
 	}
   ],
   "total": 194,
