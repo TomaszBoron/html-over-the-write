@@ -17,7 +17,7 @@ class DummyJsonApiService
         string $baseUrl = 'https://dummyjson.com',
         string $productsFile = '/var/www/html/assets/data/products.json',
         string $categoriesFile = '/var/www/html/assets/data/categories.json',
-        bool $useStaticData = false
+        bool $useStaticData = true
     ) {
         $this->client = $client;
         $this->baseUrl = rtrim($baseUrl, '/');

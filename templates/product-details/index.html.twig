@@ -30,12 +30,6 @@
 				<div class="text-sm text-gray-600 space-y-1">
 					<p><strong>SKU:</strong> {{ product.sku }}</p>
 					<p><strong>Stock:</strong> {{ product.stock }}</p>
-					<p><strong>Weight:</strong> {{ product.weight }} kg</p>
-					<p><strong>Dimensions (W×H×D):</strong> {{ product.dimensions.width }} × {{ product.dimensions.height }} × {{ product.dimensions.depth }} cm</p>
-					<p><strong>Warranty:</strong> {{ product.warrantyInformation }}</p>
-					<p><strong>Shipping:</strong> {{ product.shippingInformation }}</p>
-					<p><strong>Return Policy:</strong> {{ product.returnPolicy }}</p>
-					<p><strong>Minimum Order Quantity:</strong> {{ product.minimumOrderQuantity }}</p>
 				</div>
 
 				<a href="/cart/add?productId={{ product.id }}&quantity=1" class="mt-4 w-full text-center bg-sky-800 text-white py-3 rounded hover:bg-indigo-700 transition cursor-pointer">
@@ -43,25 +37,6 @@
 				</a>
 			</div>
 		</div>
-
-		<!-- Recenzje -->
-		<section class="mt-8 p-6 bg-gray-100 rounded-lg">
-			<h2 class="text-2xl font-semibold mb-4">Recenzje ({{ product.reviews|length }})</h2>
-			<ul class="space-y-4 max-h-64 overflow-y-auto">
-				{% for review in product.reviews %}
-					<li class="bg-white p-4 rounded shadow-sm">
-						<div class="flex justify-between items-center mb-1">
-							<p class="font-semibold">{{ review.reviewerName }}</p>
-							<p class="text-yellow-500 font-bold">{{ review.rating }} ★</p>
-						</div>
-						<p class="text-gray-700 mb-2">{{ review.comment }}</p>
-						<p class="text-xs text-gray-500">{{ review.date|date("Y-m-d") }}</p>
-					</li>
-				{% else %}
-					<li class="text-gray-600 italic">Brak recenzji.</li>
-				{% endfor %}
-			</ul>
-		</section>
 	</section>
 </div>
 

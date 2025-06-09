@@ -47,7 +47,6 @@ services:
         working_dir: /app
         volumes:
             - ./strapi-cms:/app
-        command:  npm install && npm run develop
         environment:
             - HOST=0.0.0.0
             - PORT=1337
