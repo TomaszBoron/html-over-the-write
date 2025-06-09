@@ -15,4 +15,12 @@ final class AboutController extends AbstractController
             'controller_name' => 'AboutController',
         ]);
     }
+
+    #[Route('/contact', name: 'app_about_team')]
+    public function team(): Response
+    {
+        return $this->render('about/index.html.twig', [
+            'controller_name' => 'AboutController',
+        ]);
+    }
 }
