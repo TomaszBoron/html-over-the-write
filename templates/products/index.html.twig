@@ -13,7 +13,7 @@
                 <h2 class="text-xl font-semibold mb-4">Filtry</h2>
                 <ul class="space-y-2 text-sky-800">
                     </li>                    <li>
-                        <a href="/product" class="hover:underline">All</a>
+                        <a href="/products" class="hover:underline">All</a>
                     </li>
                     {% for category in categories %}
                     {% set selectedClass = app.request.get('category') == category.slug ? 'font-bold' : '' %}
