@@ -4,6 +4,7 @@
 
 {% block body %}
 <div id="content" class="example-wrapper">
+
     <!-- Hero -->
     <section class="bg-sky-800 text-white py-20">
         <div class="container mx-auto px-6 text-center max-w-3xl">
@@ -40,10 +41,20 @@
                         </div>
                     </div>
                 {% endfor %}
-
             </div>
         </div>
     </section>
+
+    <div class="text-center py-12">
+        <a href="/about"
+           data-turbo-frame="contact_form"
+           data-turbo-action="replace"
+           class="inline-block bg-sky-800 text-white py-3 px-6 rounded-lg hover:bg-sky-700 transition font-semibold">
+            Poznaj nas lepiej
+        </a>
+    </div>
+
+    <turbo-frame id="contact_form"></turbo-frame>
 
     <!-- Stopka -->
     <footer class="bg-white shadow-inner py-8 mt-16">

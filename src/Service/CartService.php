@@ -22,7 +22,7 @@ class CartService
         return $this->session->get(self::CART_KEY, []);
     }
 
-    public function addProduct(string $productId, int $quantity = 1): void
+    public function addProduct(string $productId, int $quantity = 1): ?array
     {
         $cart = $this->getCart();
 
@@ -35,6 +35,7 @@ class CartService
         }
 
         $this->session->set(self::CART_KEY, $cart);
+        return ['product' => $product, 'quantity' => count($this->getCart())];
     }
 
     public function removeProduct(string $productId): void

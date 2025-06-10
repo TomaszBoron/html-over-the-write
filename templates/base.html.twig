@@ -2,10 +2,16 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="view-transition" content="same-origin"/>
+        <meta name="turbo-prefetch" content="false">
+        <meta name="turbo-refresh-method" content="morph">
+
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
         {% block stylesheets %}
+        <style>
+        </style>
         {% endblock %}
 
         {% block javascripts %}
@@ -18,7 +24,7 @@
             <div class="container mx-auto flex items-center justify-between py-4 px-6">
                 <a href="#" class="text-2xl font-bold text-indigo-600">MójSklep</a>
                 <nav class="space-x-6 text-gray-700 hidden md:flex">
-                    <a href="/" class="hover:text-indigo-600 transition">Home</a>
+                    <a href="/" class="hover:text-indigo-600 transition" >Home</a>
                     <a href="/products" class="hover:text-indigo-600 transition">Produkty</a>
                     <a href="/about" class="hover:text-indigo-600 transition">O nas</a>
                     <a href="/cart" class="hover:text-indigo-600 transition">Koszyk</a>
@@ -27,15 +33,16 @@
                     <!-- ikona menu hamburger -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                          viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                              d="M4 6h16M4 12h16M4 18h16" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
             </div>
         </header>
 
-        <main id="main" >
+        <main id="main">
         {% block body %}{% endblock %}
         </main>
+
+        <div id="add-to-cart-success"></div>
     </body>
 </html>

@@ -3,9 +3,10 @@
 {% block title %}Hello CartController!{% endblock %}
 
 {% block body %}
+
 <div id="content" class="bg-gray-50 p-6">
     <section class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6">
-        <h1 class="text-3xl font-bold mb-6">Twój koszyk</h1>
+        <h1 class="text-3xl font-bold mb-6">Twój koszyk (<turbo-frame id="cart-count"><span>{{ quantity }}</span></turbo-frame>)</h1>
 
         {% if cartItems is empty %}
             <p class="text-gray-600 italic">Twój koszyk jest pusty.</p>

@@ -37,12 +37,18 @@ final class ProductController extends AbstractController
     }
 
     #[Route('/product/{id}', name: 'app_product_detail')]
-    public function detail(string $id): Response
+    public function detail(Request $request, string $id): Response
     {
         $product = $this->dummyJsonApi->getProductById($id);
 
         if (!$product) {
             throw $this->createNotFoundException('Produkt nie znaleziony');
+        }
+
+        if (str_contains($request->headers->get('Accept'), 'text/vnd.turbo-stream.html')) {
+            return $this->render('/product-details/stream.html.twig', [
+                'product' => $product,
+            ], new Response('', 200, ['Content-Type' => 'text/vnd.turbo-stream.html']));
         }
 
         return $this->render('product-details/index.html.twig', [

@@ -1,0 +1,26 @@
+<turbo-stream action="update" target="add-to-cart-success">
+	<template>
+		<div class="fixed bottom-5 right-5">
+			<input type="checkbox" id="toast-toggle" class="hidden peer"/>
+
+			<div class="bg-green-500 text-white px-6 py-3 rounded-2xl shadow-lg flex items-center space-x-3 peer-checked:hidden">
+				<svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+				</svg>
+				<span>Dodano do koszyka produkt:<br><b>{{ product.title }}</span>
+				<label for="toast-toggle"
+					   class="cursor-pointer ml-2 text-white hover:text-white/80 text-lg leading-none">
+					&times;
+				</label>
+			</div>
+		</div>
+	</template>
+</turbo-stream>
+
+<turbo-stream action="update" target="cart-count">
+	<template>
+		<div class="relative inline-block">
+			<span class="absolute -top-4 -right-6 bg-red-500 text-white text-s font-bold rounded-full px-1.5 py-0.5 leading-none">{{ quantity }}</span>
+        </div>
+	</template>
+</turbo-stream>

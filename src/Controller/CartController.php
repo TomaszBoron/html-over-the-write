@@ -24,6 +24,7 @@ final class CartController extends AbstractController
 
         return $this->render('cart/index.html.twig', [
             'cartItems' => $cartItems,
+            'quantity' => array_sum(array_column($cartItems, 'quantity')),
         ]);
     }
 
@@ -37,10 +38,18 @@ final class CartController extends AbstractController
             return $this->redirectToRoute('app_cart');
         }
 
-        $this->cartService->addProduct($productId, $quantity);
+        $cart = $this->cartService->addProduct($productId, $quantity);
+
+        if (str_contains($request->headers->get('Accept'), 'text/vnd.turbo-stream.html')) {
+            return $this->render('/cart/stream.twig', [
+                'product' => $cart['product'],
+                'quantity' => $cart['quantity'],
+            ], new Response('', 200, ['Content-Type' => 'text/vnd.turbo-stream.html']));
+        }
 
         return $this->redirectToRoute('app_cart');
     }
+
     #[Route('/cart/remove', name: 'app_cart_remove')]
     public function remove(Request $request): Response
     {

@@ -21,9 +21,11 @@ class StrapiApiService
      */
     public function getProducts(): array
     {
-        $response = $this->client->request('GET', $this->baseUrl . '/products?populate=*');
-
-        return $response->toArray()['data'] ?? [];
+        try {
+            $response = $this->client->request('GET', $this->baseUrl . '/products?populate=*');
+            return $response->toArray()['data'] ?? [];
+        } catch (\Exception $e) {
+            return [];
+        }
     }
-
 }
