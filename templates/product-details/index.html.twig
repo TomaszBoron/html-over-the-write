@@ -4,9 +4,11 @@
 
 {% block body %}
 
+	<turbo-frame id="product_details">
 	<div id="product_details">
 	{{ include('product-details/partials/product.html.twig', { product: product }) }}
 	</div>
+	</turbo-frame>
 
 	<div class="max-w-5xl mx-auto mt-8 p-6 bg-white rounded-lg shadow-lg">
 		<h2 class="text-2xl font-bold mb-4">Product Description</h2>
