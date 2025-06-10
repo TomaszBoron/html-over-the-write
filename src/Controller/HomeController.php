@@ -26,4 +26,12 @@ final class HomeController extends AbstractController
             'products' => $products,
         ]);
     }
+
+    #[Route('/time', name: 'server_time')]
+    public function time(): Response
+    {
+        $time = new \DateTimeImmutable();
+        return new Response($time->format('Y-m-d H:i:s'));
+    }
+
 }
