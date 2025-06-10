@@ -45,10 +45,14 @@ final class ProductController extends AbstractController
             throw $this->createNotFoundException('Produkt nie znaleziony');
         }
 
+        // Check if the request is for a Turbo Stream response
         if (str_contains($request->headers->get('Accept'), 'text/vnd.turbo-stream.html')) {
-            return $this->render('/product-details/stream.html.twig', [
-                'product' => $product,
-            ], new Response('', 200, ['Content-Type' => 'text/vnd.turbo-stream.html']));
+            return $this->render(
+                '/product-details/stream.html.twig', [
+                    'product' => $product
+                ],
+                new Response('', 200, ['Content-Type' => 'text/vnd.turbo-stream.html'])
+            );
         }
 
         return $this->render('product-details/index.html.twig', [
