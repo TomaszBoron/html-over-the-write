@@ -1,21 +1,21 @@
-# 🐳 Uruchamianie projektu
+# 🐳 Running the Project
 
-## Wymagania
+## Requirements
 
-- [Docker](https://www.docker.com/)
+* [Docker](https://www.docker.com/)
 
 ---
 
-## 🔧 Budowanie i uruchamianie kontenerów
+## 🔧 Building and Starting Containers
 
 ```bash
-* Skopiuj plik `.env` z `.env.example
-* Skopiuj plik `.env` z `.env.example w ./strapi-cms
-
+* Copy the `.env` file from `.env.example`
+* Copy the `.env` file from `.env.example` in `./strapi-cms`
 
 docker-compose up -d --build
 ```
 
-## 🛠️ Dostęp do aplikacji
-- http://localhost:8080/ aplikacja 
-- http://localhost:1337/admin strapi CMS
+## 🛠️ Application Access
+
+* [http://localhost:8080/](http://localhost:8080/) — main application
+* [http://localhost:1337/admin](http://localhost:1337/admin) — Strapi CMS admin panel
