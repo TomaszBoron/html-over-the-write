@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CartController!{% endblock %}
+
+{% block body %}
+
+<div id="content" class="bg-gray-50 p-6">
+    <section class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6">
+        <h1 class="text-3xl font-bold mb-6">Twój koszyk (<turbo-frame id="cart-count"><span>{{ quantity }}</span></turbo-frame>)</h1>
+
+        {% if cartItems is empty %}
+            <p class="text-gray-600 italic">Twój koszyk jest pusty.</p>
+        {% else %}
+            <table class="w-full table-auto border-collapse">
+                <thead>
+                <tr class="bg-gray-100 text-left">
+                    <th class="p-3 border-b">Produkt</th>
+                    <th class="p-3 border-b">Cena</th>
+                    <th class="p-3 border-b">Ilość</th>
+                    <th class="p-3 border-b">Razem</th>
+                    <th class="p-3 border-b">Akcje</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% set total = 0 %}
+                {% for item in cartItems %}
+                    {% set lineTotal = item.product.price * item.quantity %}
+                    {% set total = total + lineTotal %}
+                    <tr class="border-b hover:bg-gray-50">
+                        <td class="p-3 flex items-center gap-4">
+                            <img src="{{ item.product.thumbnail }}" alt="{{ item.product.title }}" class="w-16 h-16 object-contain rounded" />
+                            <div>
+                                <p class="font-semibold">{{ item.product.title }}</p>
+                                <p class="text-sm text-gray-600">SKU: {{ item.product.sku }}</p>
+                            </div>
+                        </td>
+                        <td class="p-3">{{ item.product.price }} zł</td>
+                        <td class="p-3">
+                            <input type="number" min="1" value="{{ item.quantity }}" class="w-16 border rounded px-2 py-1" />
+                        </td>
+                        <td class="p-3 font-bold">{{ lineTotal }} zł</td>
+                        <td class="p-3">
+                            <a href="/cart/remove?productId={{ item.product.id }}" class="text-red-600 hover:underline">Usuń</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+                <tfoot>
+                <tr class="font-bold text-lg">
+                    <td colspan="3" class="text-right p-3">Razem do zapłaty:</td>
+                    <td class="p-3">{{ total }} zł</td>
+                    <td></td>
+                </tr>
+                </tfoot>
+            </table>
+
+            <div class="mt-6 flex justify-end gap-4">
+                <a href="/products" class="px-6 py-2 bg-gray-300 rounded hover:bg-gray-400 transition">Kontynuuj zakupy</a>
+            </div>
+        {% endif %}
+    </section>
+</div>
+
+{% endblock %}

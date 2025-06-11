@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+<div id="content" class="example-wrapper">
+
+    {# HTMX clock example #}
+{#    <div hx-get="/time" hx-target="#clock" hx-swap="innerHTML" hx-trigger="every 1s" class="text-center py-4">#}
+{#        <div id="clock"></div>#}
+{#    </div>#}
+
+    <!-- Hero -->
+    <section class="bg-sky-800 text-white py-20">
+        <div class="container mx-auto px-6 text-center max-w-3xl">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Znajdź idealny produkt dla siebie</h1>
+            <p class="mb-8 text-lg md:text-xl">W naszym sklepie znajdziesz szeroki wybór produktów najwyższej jakości.</p>
+            <a href="/products"
+               class="bg-white text-indigo-600 font-semibold py-3 px-6 rounded-lg hover:bg-gray-100 transition">
+                Zobacz produkty
+            </a>
+        </div>
+    </section>
+
+    <!-- Sekcja produktów -->
+    <section id="products" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <h2 class="text-3xl font-bold mb-10 text-center text-gray-900">Nasze produkty</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+
+                {% if products is empty %}
+                    <div class="col-span-1 sm:col-span-2 md:col-span-3 lg:col-span-4 text-center">
+                        <p class="text-gray-600">Brak dostępnych produktów.</p>
+                    </div>
+                {% endif %}
+                
+                {% for product in products %}
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+                        <img src="http://localhost:1337{{ product.image.url }}" alt="{{ product.name }}" class="w-full h-48 object-cover" />
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">{{ product.name }}</h3>
+                            <p class="text-indigo-600 font-bold text-xl mb-4">{{ product.price }} zł</p>
+                            <button class="w-full bg-sky-800 text-white py-2 rounded hover:bg-indigo-700 transition">
+                                Dodaj do koszyka
+                            </button>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <div class="text-center py-12">
+        <a href="/about"
+           data-turbo-frame="contact_form"
+           data-turbo-action="replace"
+           class="inline-block bg-sky-800 text-white py-3 px-6 rounded-lg hover:bg-sky-700 transition font-semibold">
+            Poznaj nas lepiej
+        </a>
+    </div>
+
+    <turbo-frame id="contact_form"></turbo-frame>
+
+    <!-- Stopka -->
+    <footer class="bg-white shadow-inner py-8 mt-16">
+        <div class="container mx-auto px-6 text-center text-gray-600">
+            &copy; 2025 MójSklep. Wszelkie prawa zastrzeżone.
+        </div>
+    </footer>
+</div>
+{% endblock %}
